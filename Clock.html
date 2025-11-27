@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clock & Stopwatch</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⏰ Clock & Stopwatch</h1>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('clock')">🕐 Clock</button>
+            <button class="tab" onclick="showTab('stopwatch')">⏱️ Stopwatch</button>
+            <button class="tab" onclick="showTab('timer')">⏲️ Timer</button>
+        </div>
+        
+        <!-- Clock Tab -->
+        <div id="clock" class="content active">
+            <div class="clock" id="currentTime">00:00:00</div>
+            <div class="date" id="currentDate">Loading...</div>
+        </div>
+        
+        <!-- Stopwatch Tab -->
+        <div id="stopwatch" class="content">
+            <div class="stopwatch-display" id="stopwatchDisplay">00:00:00</div>
+            <div class="buttons">
+                <button class="btn start" onclick="startStopwatch()">▶️ Start</button>
+                <button class="btn lap" onclick="recordLap()">⏺️ Lap</button>
+                <button class="btn reset" onclick="resetStopwatch()">🔄 Reset</button>
+            </div>
+            <div class="laps" id="lapsContainer"></div>
+        </div>
+        
+        <!-- Timer Tab -->
+        <div id="timer" class="content">
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-input">
+                <input type="number" id="minutes" value="25" min="0" max="60" placeholder="Min">
+                <input type="number" id="seconds" value="0" min="0" max="59" placeholder="Sec">
+            </div>
+            <div class="buttons">
+                <button class="btn start" onclick="startTimer()">▶️ Start</button>
+                <button class="btn reset" onclick="resetTimer()">🔄 Reset</button>
+            </div>
+            <div class="timer-status" id="timerStatus">Ready to start!</div>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
